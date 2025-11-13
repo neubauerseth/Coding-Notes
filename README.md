@@ -64,6 +64,9 @@ This is my notebook for leetcode studying
 ### Graph Algorithms
 
 #### DFS - Tree traversal, connected components, cycle detection
+**Time Complexity:** O(V + E) | **Space Complexity:** O(V)  
+**Best for:** Exploring all paths, detecting cycles, topological ordering, finding connected components in trees/graphs
+
 ```python
 def dfs(graph, start, visited=None):
     if visited is None:
@@ -80,6 +83,9 @@ def dfs(graph, start, visited=None):
 [View all DFS implementations →](python_algorithms/dfs.py)
 
 #### BFS - Shortest path (unweighted), level-order traversal
+**Time Complexity:** O(V + E) | **Space Complexity:** O(V)  
+**Best for:** Finding shortest path in unweighted graphs, level-order traversal, finding minimum steps/hops
+
 ```python
 from collections import deque
 
@@ -102,6 +108,9 @@ def bfs(graph, start):
 [View all BFS implementations →](python_algorithms/bfs.py)
 
 #### Dijkstra's - Shortest path (weighted, non-negative)
+**Time Complexity:** O((V + E) log V) | **Space Complexity:** O(V)  
+**Best for:** Finding shortest path in weighted graphs with non-negative weights, GPS navigation, network routing
+
 ```python
 import heapq
 
@@ -128,6 +137,9 @@ def dijkstra(graph, start):
 [View all Dijkstra implementations →](python_algorithms/dijkstra.py)
 
 #### Topological Sort - DAG ordering, dependency resolution
+**Time Complexity:** O(V + E) | **Space Complexity:** O(V)  
+**Best for:** Task scheduling, dependency resolution, course prerequisites, build systems
+
 ```python
 from collections import deque, defaultdict
 
@@ -157,6 +169,9 @@ def topological_sort(graph):
 [View all Topological Sort implementations →](python_algorithms/topological_sort.py)
 
 #### Disjoint Set Union - Connected components, union-find operations
+**Time Complexity:** O(α(n)) ≈ O(1) per operation | **Space Complexity:** O(n)  
+**Best for:** Dynamic connectivity queries, Kruskal's MST, detecting cycles, network connectivity
+
 ```python
 class UnionFind:
     def __init__(self, n):
@@ -188,6 +203,9 @@ class UnionFind:
 ### Search & Optimization
 
 #### Binary Search - Finding elements in sorted arrays, optimization problems
+**Time Complexity:** O(log n) | **Space Complexity:** O(1)  
+**Best for:** Searching sorted arrays, finding boundaries, optimization problems with monotonic properties
+
 ```python
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
@@ -207,6 +225,9 @@ def binary_search(arr, target):
 [View all Binary Search implementations →](python_algorithms/binary_search.py)
 
 #### Two Pointers - Array/string problems, finding pairs, palindromes
+**Time Complexity:** O(n) | **Space Complexity:** O(1)  
+**Best for:** Sorted array problems, palindrome detection, pair/triplet sum problems, removing duplicates
+
 ```python
 def two_sum_sorted(arr, target):
     left, right = 0, len(arr) - 1
@@ -226,6 +247,9 @@ def two_sum_sorted(arr, target):
 [View all Two Pointers implementations →](python_algorithms/two_pointers.py)
 
 #### Sliding Window - Subarray/substring problems, fixed or variable window sizes
+**Time Complexity:** O(n) | **Space Complexity:** O(1)  
+**Best for:** Subarray/substring optimization, finding max/min in windows, character frequency problems
+
 ```python
 def max_sum_subarray_k(arr, k):
     if len(arr) < k:
@@ -245,6 +269,9 @@ def max_sum_subarray_k(arr, k):
 [View all Sliding Window implementations →](python_algorithms/sliding_window.py)
 
 ### Dynamic Programming
+**Time Complexity:** O(n) | **Space Complexity:** O(n) memoization, O(1) optimized  
+**Best for:** Optimization problems with overlapping subproblems, counting ways, decision problems
+
 ```python
 def fibonacci(n, memo={}):
     if n in memo:
@@ -272,6 +299,9 @@ def fibonacci_bottom_up(n):
 [View all Dynamic Programming implementations →](python_algorithms/dynamic_programming.py)
 
 ### Greedy Algorithms
+**Time Complexity:** O(n log n) | **Space Complexity:** O(1)  
+**Best for:** Activity selection, interval scheduling, making locally optimal choices for global optimum
+
 ```python
 def activity_selection(activities):
     # Sort by end time
@@ -292,6 +322,9 @@ def activity_selection(activities):
 ### Data Structures
 
 #### Heap - Priority queue, kth largest/smallest elements
+**Time Complexity:** O(n log k) | **Space Complexity:** O(k)  
+**Best for:** Priority queues, finding top K elements, median maintenance, task scheduling
+
 ```python
 import heapq
 
@@ -309,6 +342,9 @@ def find_kth_largest(nums, k):
 [View all Heap implementations →](python_algorithms/heap_sorting.py)
 
 #### Stack - Parsing, matching brackets, monotonic stack problems
+**Time Complexity:** O(n) | **Space Complexity:** O(n)  
+**Best for:** Expression parsing, bracket matching, monotonic problems, function call simulation
+
 ```python
 def is_valid_parentheses(s):
     stack = []
@@ -326,6 +362,9 @@ def is_valid_parentheses(s):
 [View all Stack implementations →](python_algorithms/stack.py)
 
 #### Prefix Sums - Range sum queries, subarray sum problems
+**Time Complexity:** O(1) query, O(n) preprocessing | **Space Complexity:** O(n)  
+**Best for:** Range sum queries, subarray sum problems, cumulative frequency analysis
+
 ```python
 class PrefixSum:
     def __init__(self, nums):
@@ -339,6 +378,9 @@ class PrefixSum:
 [View all Prefix Sum implementations →](python_algorithms/prefix_sums.py)
 
 ### Brute Force/Backtracking
+**Time Complexity:** O(n!) for permutations, O(2^n) for subsets | **Space Complexity:** O(n) recursion depth  
+**Best for:** Generating all combinations/permutations, N-Queens, Sudoku, constraint satisfaction problems
+
 ```python
 def generate_permutations(nums):
     def backtrack(current_perm, remaining):
